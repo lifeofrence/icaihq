@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages & Sponsorship | ICAI Trade Fair 2026</title>
+    <meta name="description" content="Explore sponsorship packages, exhibition booth options, and delegate passes for the ICAI Industrial & Commercialization Trade Fair 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Page-level overrides ── */
+        .packages-hero {
+            background: linear-gradient(135deg, #000c19 0%, #0B2138 50%, #1a0005 100%);
+            padding: 10rem 1.5rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .packages-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(230,33,41,0.12), transparent 60%),
+                        radial-gradient(circle at 20% 80%, rgba(41,168,171,0.07), transparent 50%);
+        }
+        .packages-hero .container { position: relative; z-index: 1; }
+        .packages-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); color: #fff; margin-bottom: 1.5rem; }
+        .packages-hero .lead-text { max-width: 750px; color: rgba(255,255,255,0.8); }
+
+        /* ── Section wrappers ── */
+        .pkg-section { padding: 6rem 1.5rem; }
+        .pkg-section.dark { background: #050a15; }
+        .pkg-section.light { background: #f5f7fa; }
+        .pkg-section.mid { background: #080f1e; }
+
+        .pkg-section-inner { max-width: 1200px; margin: 0 auto; }
+
+        .pkg-section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+        }
+        .pkg-section.light .pkg-section-title { color: #0B2138; }
+
+        .pkg-section-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 4rem;
+            font-size: 1.05rem;
+        }
+        .pkg-section.light .pkg-section-subtitle { color: #5a6a7a; }
+
+        .section-eyebrow {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--industrial-red);
+            margin-bottom: 0.8rem;
+        }
+
+        /* ── Sponsorship Tiers ── */
+        .sponsorship-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .pkg-card {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+        }
+        .pkg-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+        .pkg-card.featured {
+            border-color: var(--industrial-red);
+            box-shadow: 0 0 40px rgba(230,33,41,0.2);
+            transform: scaleY(1.02);
+        }
+        .pkg-card.featured:hover {
+            transform: translateY(-10px) scaleY(1.02);
+        }
+        .featured-badge {
+            position: absolute;
+            top: 1.2rem; right: 1.2rem;
+            background: var(--industrial-red);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .pkg-header {
+            padding: 2.5rem 2rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .pkg-tier-icon {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.2rem;
+        }
+        .pkg-tier-icon i { width: 32px; height: 32px; }
+        .icon-diamond { background: linear-gradient(135deg, #b9f2ff, #29A8AB); }
+        .icon-platinum { background: linear-gradient(135deg, #e5e4e2, #7f8c8d); }
+        .icon-gold   { background: linear-gradient(135deg, #D4AF37, #b8930a); }
+        .icon-silver { background: linear-gradient(135deg, #7F8C8D, #4a5568); }
+        .icon-bronze { background: linear-gradient(135deg, #cd7f32, #8b4513); }
+
+        .pkg-tier-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .pkg-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--industrial-red);
+            margin: 0.8rem 0 0.3rem;
+        }
+        .pkg-price-label { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+        .pkg-body { padding: 2rem; }
+        .pkg-body ul { list-style: none; }
+        .pkg-body li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+        .pkg-body li i { color: var(--industrial-red); flex-shrink: 0; margin-top: 2px; width: 16px; height: 16px; }
+        .pkg-body li.muted i { color: rgba(255,255,255,0.2); }
+        .pkg-body li.muted { color: rgba(255,255,255,0.3); text-decoration: line-through; }
+
+        .pkg-footer { padding: 0 2rem 2.5rem; }
+        .pkg-footer .btn {
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-pkg-naming {
+            background: linear-gradient(135deg, #E62129, #990000);
+            color: #fff;
+            border: none;
+            box-shadow: 0 8px 20px rgba(230,33,41,0.4);
+        }
+        .btn-pkg-naming:hover { box-shadow: 0 12px 30px rgba(230,33,41,0.6); transform: translateY(-2px); }
+        .btn-pkg-gold {
+            background: linear-gradient(135deg, #D4AF37, #b8930a);
+            color: #000;
+            border: none;
+            box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+        }
+        .btn-pkg-gold:hover { box-shadow: 0 12px 30px rgba(212,175,55,0.5); transform: translateY(-2px); }
+        .btn-pkg-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .btn-pkg-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+
+        /* Row 2 – wider grid for 4 cards */
+        .sponsorship-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        /* ── Exhibition Booths ── */
+        .booth-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .booth-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+            border: 1px solid #e8edf2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .booth-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+        .booth-card-header {
+            padding: 2rem;
+            background: #0B2138;
+            color: #fff;
+            text-align: center;
+        }
+        .booth-size {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--industrial-red);
+        }
+        .booth-size-label { font-size: 0.85rem; opacity: 0.7; margin-top: 0.3rem; }
+        .booth-name { font-size: 1.3rem; font-weight: 700; margin-top: 0.5rem; }
+        .booth-price-tag {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #D4AF37;
+            margin-top: 0.5rem;
+        }
+        .booth-body { padding: 2rem; }
+        .booth-body ul { list-style: none; }
+        .booth-body li {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.9rem;
+            color: #2C3E50;
+        }
+        .booth-body li i { color: var(--industrial-red); width: 15px; height: 15px; flex-shrink: 0; }
+        .booth-cta {
+            padding: 0 2rem 2rem;
+        }
+        .booth-cta .btn {
+            width: 100%;
+            text-align: center;
+            padding: 0.9rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: block;
+            text-decoration: none;
+            background: #0B2138;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .booth-cta .btn:hover { background: var(--industrial-red); transform: translateY(-2px); }
+
+        /* ── Delegate Passes ── */
+        .delegate-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .delegate-card {
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .delegate-card:hover { transform: translateY(-8px); border-color: rgba(230,33,41,0.4); }
+        .delegate-card.popular { border-color: var(--industrial-red); }
+        .delegate-pass-icon {
+            width: 70px; height: 70px;
+            border-radius: 18px;
+            margin: 0 auto 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(230,33,41,0.1);
+        }
+        .delegate-pass-icon i { width: 34px; height: 34px; color: var(--industrial-red); }
+        .delegate-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .delegate-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--industrial-red);
+            margin: 0.8rem 0;
+        }
+        .delegate-desc { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .delegate-card ul { list-style: none; text-align: left; margin-bottom: 2rem; }
+        .delegate-card li {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.75);
+        }
+        .delegate-card li i { color: var(--industrial-red); width: 15px; height: 15px; }
+        .delegate-card .btn { display: block; text-align: center; text-decoration: none; }
+
+        /* ── Comparison Table ── */
+        .comparison-table-wrap { overflow-x: auto; }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+        .comparison-table th {
+            background: #0B2138;
+            color: #fff;
+            padding: 1.2rem 1.5rem;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+        }
+        .comparison-table th:first-child { text-align: left; background: #050a15; }
+        .comparison-table th.highlight { background: var(--industrial-red); }
+        .comparison-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e8edf2;
+            font-size: 0.9rem;
+            color: #2C3E50;
+            text-align: center;
+        }
+        .comparison-table td:first-child { text-align: left; font-weight: 600; color: #0B2138; }
+        .comparison-table tr:hover td { background: #f8fafc; }
+        .comparison-table .yes-icon { color: #22c55e; width: 20px; height: 20px; }
+        .comparison-table .no-icon { color: #e5e7eb; width: 20px; height: 20px; }
+        .comparison-table .partial { color: #f59e0b; font-size: 0.8rem; font-weight: 600; }
+        .comparison-table tr.row-category td {
+            background: #f0f4f8;
+            font-weight: 800;
+            color: #0B2138;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-banner {
+            background: linear-gradient(135deg, #E62129 0%, #990000 100%);
+            border-radius: 28px;
+            padding: 5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('assets/img/ICAI-K.jpeg') center/cover;
+            opacity: 0.05;
+        }
+        .cta-banner h2 { font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 1rem; }
+        .cta-banner p { color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
+        .cta-banner-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-cta-white {
+            background: #fff;
+            color: var(--industrial-red);
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .btn-cta-outline-white {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-cta-outline-white:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .sponsorship-grid { grid-template-columns: repeat(2, 1fr); }
+            .sponsorship-grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .booth-grid { grid-template-columns: repeat(2, 1fr); }
+            .delegate-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .sponsorship-grid { grid-template-columns: 1fr; }
+            .sponsorship-grid-4 { grid-template-columns: 1fr; }
+            .booth-grid { grid-template-columns: 1fr; }
+            .delegate-grid { grid-template-columns: 1fr; }
+            .pkg-card.featured { transform: none; }
+            .cta-banner { padding: 3rem 1.5rem; }
+            .cta-banner-actions { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body class="subpage">
+
+    <!-- ── Navigation ── -->
+    <nav id="main-nav" class="sticky">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="brand-logo"></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">About Us <i data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html">About ICAI</a>
+                        <a href="our-profile.html">Organization Profile</a>
+                        <a href="our-team.html">Our Team</a>
+                        <a href="our-partners.html">Strategic Partners</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">Program <i data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="program-info.html">Program Info</a>
+                        <a href="summit-agenda.html">Summit Agenda</a>
+                        <a href="business-plan.html">Project Overview</a>
+                    <a href="gallery.html">Gallery</a>
+                        <a href="gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <a href="packages.html">Packages</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-accent">Get a Quote</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <header class="packages-hero">
+        <div class="container">
+            <span class="badge">ICAI Trade Fair 2026 · June 29 – July 4</span>
+            <h1>Sponsorship <span class="highlight-red">Packages</span></h1>
+            <p class="lead-text">Position your brand at the forefront of Nigeria's industrial revolution. Choose the package that aligns with your strategic goals and industry impact.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;">
+                <a href="#sponsorship" class="btn btn-accent">View Sponsorship Tiers</a>
+                <a href="#booths" class="btn" style="background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.2);">Exhibition Booths</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ────────────────────────────────────────────────
+         SECTION 1 · HEADLINE SPONSORSHIP TIERS
+    ──────────────────────────────────────────────── -->
+    <section class="pkg-section dark" id="sponsorship">
+        <div class="pkg-section-inner">
+            <span class="section-eyebrow">Headline Sponsorships</span>
+            <h2 class="pkg-section-title">Choose Your <span class="highlight-red">Impact Level</span></h2>
+            <p class="pkg-section-subtitle">Exclusive branding, media exposure, and direct access to 10,000+ industry stakeholders.</p>
+
+            <div class="sponsorship-grid">
+
+                <!-- Diamond Package -->
+                <div class="pkg-card featured">
+                    <div class="featured-badge">⭐ Most Exclusive</div>
+                    <div class="pkg-header">
+                        <div class="pkg-tier-icon icon-diamond">
+                            <i data-lucide="gem" style="color:#0B2138;"></i>
+                        </div>
+                        <div class="pkg-tier-name">Diamond Package</div>
+                        <div class="pkg-price">$100,000</div>
+                        <div class="pkg-price-label">Headline Sponsor</div>
+                    </div>
+                    <div class="pkg-body">
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> Opening & Closing Remarks at Plenary</li>
+                            <li><i data-lucide="check-circle"></i> Featured speaking opportunity with VVIP officials</li>
+                            <li><i data-lucide="check-circle"></i> Private access with top gov't officials</li>
+                            <li><i data-lucide="check-circle"></i> Free 10 exhibition booths</li>
+                            <li><i data-lucide="check-circle"></i> VVIP diplomatic dinner (10 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Exclusive Deal Room access (5 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Investment roundtable with industry leaders</li>
+                            <li><i data-lucide="check-circle"></i> Private meet-and-greet with diplomats</li>
+                            <li><i data-lucide="check-circle"></i> Hotel, airport pick-up & logistics (5 days)</li>
+                            <li><i data-lucide="check-circle"></i> Logo on all online/offline marketing materials</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-naming">Secure Diamond Package →</a>
+                    </div>
+                </div>
+
+                <!-- Platinum Package -->
+                <div class="pkg-card">
+                    <div class="pkg-header">
+                        <div class="pkg-tier-icon icon-platinum">
+                            <i data-lucide="award" style="color:#0B2138;"></i>
+                        </div>
+                        <div class="pkg-tier-name" style="color:#e5e4e2;">Platinum Package</div>
+                        <div class="pkg-price">$50,000</div>
+                        <div class="pkg-price-label">Elite Partner</div>
+                    </div>
+                    <div class="pkg-body">
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> Featured speaking at plenary session</li>
+                            <li><i data-lucide="check-circle"></i> Private meet-and-greet with diplomats</li>
+                            <li><i data-lucide="check-circle"></i> 5 exhibition booths</li>
+                            <li><i data-lucide="check-circle"></i> VVIP diplomatic dinner (5 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Exclusive Deal room access (3 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Logo on all marketing materials & website</li>
+                            <li><i data-lucide="check-circle"></i> Branded souvenirs & company banner display</li>
+                            <li><i data-lucide="check-circle"></i> Hotel, airport pick-up & logistics (5 days)</li>
+                            <li><i data-lucide="check-circle"></i> Networking reception invitation</li>
+                            <li><i data-lucide="check-circle"></i> 3 tickets for side event</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-outline">Select Platinum →</a>
+                    </div>
+                </div>
+
+                <!-- Gold Package -->
+                <div class="pkg-card">
+                    <div class="pkg-header">
+                        <div class="pkg-tier-icon icon-gold">
+                            <i data-lucide="star" style="color:#fff;"></i>
+                        </div>
+                        <div class="pkg-tier-name" style="color:#D4AF37;">Gold Package</div>
+                        <div class="pkg-price">$20,000</div>
+                        <div class="pkg-price-label">Premium Sponsor</div>
+                    </div>
+                    <div class="pkg-body">
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> 3 exhibition booths</li>
+                            <li><i data-lucide="check-circle"></i> VVIP diplomatic dinner (3 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Exclusive Deal room access (1 delegate)</li>
+                            <li><i data-lucide="check-circle"></i> B2B networking session (4 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Logo on event app & website</li>
+                            <li><i data-lucide="check-circle"></i> Social media mention & VIP status</li>
+                            <li><i data-lucide="check-circle"></i> Company Banner Displayed</li>
+                            <li><i data-lucide="check-circle"></i> Hotel & Airport Logistics (5 days)</li>
+                            <li><i data-lucide="check-circle"></i> 2 tickets for side event</li>
+                            <li class="muted"><i data-lucide="x-circle"></i> Plenary speaking slot</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-gold">Select Gold Package →</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Additional Tiers Row -->
+            <div class="sponsorship-grid-4" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin-left: auto; margin-right: auto;">
+                <!-- Silver Package -->
+                <div class="pkg-card">
+                    <div class="pkg-header" style="padding:2rem 1.5rem 1.5rem;">
+                        <div class="pkg-tier-icon icon-silver" style="width:50px;height:50px;">
+                            <i data-lucide="shield" style="color:#fff;width:24px;height:24px;"></i>
+                        </div>
+                        <div class="pkg-tier-name" style="font-size:1.25rem;color:#c0c0c0;">Silver Package</div>
+                        <div class="pkg-price" style="font-size:2rem;">$10,000</div>
+                    </div>
+                    <div class="pkg-body">
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> 2 exhibition booths</li>
+                            <li><i data-lucide="check-circle"></i> VVIP diplomatic dinner (2 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> B2B networking (3 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Logo on event website</li>
+                            <li><i data-lucide="check-circle"></i> Social media mention</li>
+                            <li><i data-lucide="check-circle"></i> Hotel & Airport Logistics (5 days)</li>
+                            <li><i data-lucide="check-circle"></i> 2 tickets for side event</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-outline" style="font-size:0.85rem;">Apply Silver →</a>
+                    </div>
+                </div>
+
+                <!-- Bronze Package -->
+                <div class="pkg-card">
+                    <div class="pkg-header" style="padding:2rem 1.5rem 1.5rem;">
+                        <div class="pkg-tier-icon icon-bronze" style="width:50px;height:50px;">
+                            <i data-lucide="award" style="color:#fff;width:24px;height:24px;"></i>
+                        </div>
+                        <div class="pkg-tier-name" style="font-size:1.25rem;color:#cd7f32;">Bronze Package</div>
+                        <div class="pkg-price" style="font-size:2rem;">$5,000</div>
+                    </div>
+                    <div class="pkg-body">
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> 1 exhibition booth</li>
+                            <li><i data-lucide="check-circle"></i> VVIP diplomatic dinner (1 delegate)</li>
+                            <li><i data-lucide="check-circle"></i> Access to B2B networking (2 delegates)</li>
+                            <li><i data-lucide="check-circle"></i> Logo on event website</li>
+                            <li><i data-lucide="check-circle"></i> Social media mention</li>
+                            <li><i data-lucide="check-circle"></i> Hotel & Airport Logistics (5 days)</li>
+                            <li><i data-lucide="check-circle"></i> 2 tickets for side event</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-outline" style="font-size:0.85rem;">Apply Bronze →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────
+         SECTION 2 · EXHIBITION BOOTHS
+    ──────────────────────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────
+         SECTION 2 · EXHIBITION BOOTH PACKAGES
+    ──────────────────────────────────────────────── -->
+    <section class="pkg-section light" id="booth-packages">
+        <div class="pkg-section-inner">
+            <span class="section-eyebrow">Exhibition Spaces</span>
+            <h2 class="pkg-section-title" style="color:#0B2138;">Booth <span class="highlight-red">Packages</span></h2>
+            <p class="pkg-section-subtitle" style="color:#5a6a7a;">Premium exhibition opportunities at Karmo District Ultra-Modern Market, Abuja. The venue is open for inspection to all exhibitors.</p>
+
+            <div class="comparison-table-wrap" style="margin-top: 3rem;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Size</th>
+                            <th>Price (₦)</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Exclusive Pavilions -->
+                        <tr class="row-category"><td colspan="4">Exclusive Pavilions (VVIP / VIP)</td></tr>
+                        <tr>
+                            <td>Exclusive Pavilion (VVIP)</td>
+                            <td>36 SQM</td>
+                            <td class="highlight-price">₦5,000,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">High-end subscribers, government entities, bluechip companies, and large-scale industrial settings.</td>
+                        </tr>
+                        <tr>
+                            <td>Exclusive Pavilion (VIP)</td>
+                            <td>18 SQM</td>
+                            <td>₦3,000,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Big companies and high-end corporate organizations.</td>
+                        </tr>
+                        <tr>
+                            <td>Exclusive Pavilion (VIP)</td>
+                            <td>9 SQM</td>
+                            <td>₦1,500,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">High-end brands, mid-size industrial firms, and corporate service providers.</td>
+                        </tr>
+
+                        <!-- Built Shops -->
+                        <tr class="row-category"><td colspan="4">Built Shops (Premium Shell)</td></tr>
+                        <tr>
+                            <td>Built Shop</td>
+                            <td>36 SQM</td>
+                            <td>₦1,500,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Solidly built structures for large-scale organizations or merging of companies.</td>
+                        </tr>
+                        <tr>
+                            <td>Built Shop</td>
+                            <td>18 SQM</td>
+                            <td>₦500,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Solidly built shops for big firms and merging of two companies.</td>
+                        </tr>
+                        <tr>
+                            <td>Built Shop</td>
+                            <td>9 SQM</td>
+                            <td>₦350,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Solidly built shops for mid-size organizations and merging small-scale enterprises.</td>
+                        </tr>
+                        <tr>
+                            <td>Built Shop</td>
+                            <td>4 SQM</td>
+                            <td>₦100,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Suitable for agro-allied exhibitors and commodity trades.</td>
+                        </tr>
+
+                        <!-- Open Spaces -->
+                        <tr class="row-category"><td colspan="4">Open Exhibition Spaces</td></tr>
+                        <tr>
+                            <td>Open Space</td>
+                            <td>36 SQM</td>
+                            <td>₦500,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Outdoor exhibition ground suitable for cluster exhibition and brand visibility.</td>
+                        </tr>
+                        <tr>
+                            <td>Open Space</td>
+                            <td>18 SQM</td>
+                            <td>₦300,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Outdoor exhibition ground suitable for cluster exhibition and brand visibility.</td>
+                        </tr>
+                        <tr>
+                            <td>Open Space</td>
+                            <td>9 SQM</td>
+                            <td>₦200,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Outdoor exhibition ground suitable for cluster exhibition and brand visibility.</td>
+                        </tr>
+                        <tr>
+                            <td>Open Space</td>
+                            <td>6 SQM</td>
+                            <td>₦100,000</td>
+                            <td style="text-align: left; font-size: 0.85rem;">Outdoor exhibition ground suitable for cluster exhibition and brand visibility.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="contact.html" class="btn btn-accent">Inquire About Booking</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #5a6a7a;">Thanks for your cooperation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────
+         SECTION 3 · DELEGATE PASSES
+    ──────────────────────────────────────────────── -->
+    <section class="pkg-section mid" id="passes">
+        <div class="pkg-section-inner">
+            <span class="section-eyebrow">Visitor & Delegate Access</span>
+            <h2 class="pkg-section-title">Delegate <span class="highlight-red">Passes</span></h2>
+            <p class="pkg-section-subtitle">Gain access to Nigeria's most significant industrial trade fair. Network, learn, and grow.</p>
+
+            <div class="delegate-grid">
+                <!-- General -->
+                <div class="delegate-card">
+                    <div class="delegate-pass-icon">
+                        <i data-lucide="ticket"></i>
+                    </div>
+                    <div class="delegate-name">General Pass</div>
+                    <div class="delegate-price">₦50,000</div>
+                    <div class="delegate-desc">Per Day Access · Ideal for visitors and SMEs</div>
+                    <ul>
+                        <li><i data-lucide="check-circle"></i> Full exhibition hall access</li>
+                        <li><i data-lucide="check-circle"></i> Industry talks & demonstrations</li>
+                        <li><i data-lucide="check-circle"></i> Networking sessions</li>
+                        <li><i data-lucide="check-circle"></i> Official event bag & catalogue</li>
+                    </ul>
+                    <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-outline">Register →</a>
+                </div>
+
+                <!-- Professional -->
+                <div class="delegate-card popular">
+                    <div class="featured-badge">Popular</div>
+                    <div class="delegate-pass-icon" style="background:rgba(230,33,41,0.15);">
+                        <i data-lucide="badge-check" style="color:var(--industrial-red);width:34px;height:34px;"></i>
+                    </div>
+                    <div class="delegate-name">Professional Pass</div>
+                    <div class="delegate-price">₦200,000</div>
+                    <div class="delegate-desc">All 6 Days · For industry professionals</div>
+                    <ul>
+                        <li><i data-lucide="check-circle"></i> Full exhibition hall access (6 days)</li>
+                        <li><i data-lucide="check-circle"></i> All panel sessions & seminars</li>
+                        <li><i data-lucide="check-circle"></i> B2B matchmaking participation</li>
+                        <li><i data-lucide="check-circle"></i> VIP networking dinner (Day 1)</li>
+                        <li><i data-lucide="check-circle"></i> Digital event programme</li>
+                        <li><i data-lucide="check-circle"></i> Certificate of participation</li>
+                    </ul>
+                    <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-naming">Register →</a>
+                </div>
+
+                <!-- Executive VIP -->
+                <div class="delegate-card">
+                    <div class="delegate-pass-icon">
+                        <i data-lucide="gem"></i>
+                    </div>
+                    <div class="delegate-name">Executive VIP</div>
+                    <div class="delegate-price">₦500,000</div>
+                    <div class="delegate-desc">All 6 Days · For C-Suite & Government Officials</div>
+                    <ul>
+                        <li><i data-lucide="check-circle"></i> Everything in Professional</li>
+                        <li><i data-lucide="check-circle"></i> Private VIP Lounge access</li>
+                        <li><i data-lucide="check-circle"></i> Priority B2B matching (5 slots)</li>
+                        <li><i data-lucide="check-circle"></i> All-day meals & refreshments</li>
+                        <li><i data-lucide="check-circle"></i> VIP shuttle service</li>
+                        <li><i data-lucide="check-circle"></i> Exclusive post-event report</li>
+                    </ul>
+                    <a href="https://paystack.shop/pay/0hmcjdvsbb" target="_blank" rel="noopener noreferrer" class="btn btn-pkg-outline">Register →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────
+         SECTION 4 · COMPARISON TABLE
+    ──────────────────────────────────────────────── -->
+    <section class="pkg-section light" id="compare">
+        <div class="pkg-section-inner">
+            <span class="section-eyebrow">Side-by-Side Comparison</span>
+            <h2 class="pkg-section-title" style="color:#0B2138;">Sponsorship <span class="highlight-red">Comparison</span></h2>
+            <p class="pkg-section-subtitle" style="color:#5a6a7a;">Everything you need to make the right decision at a glance.</p>
+
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature / Benefit</th>
+                            <th class="highlight">Diamond<br><small>$100k</small></th>
+                            <th>Platinum<br><small>$50k</small></th>
+                            <th>Gold<br><small>$20k</small></th>
+                            <th>Silver<br><small>$10k</small></th>
+                            <th>Bronze<br><small>$5k</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-category"><td colspan="6">Speaking & Access</td></tr>
+                        <tr>
+                            <td>Plenary Speaking Slot</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i> (Opening & Closing)</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i> (Featured)</td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Gov't/Diplomat Access</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i> (Private)</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i> (Meet-and-greet)</td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Investment Roundtable</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                        </tr>
+
+                        <tr class="row-category"><td colspan="6">Exhibition & Hospitality</td></tr>
+                        <tr>
+                            <td>Exhibition Booths</td>
+                            <td>10 Booths</td>
+                            <td>5 Booths</td>
+                            <td>3 Booths</td>
+                            <td>2 Booths</td>
+                            <td>1 Booth</td>
+                        </tr>
+                        <tr>
+                            <td>VVIP Diplomatic Dinner</td>
+                            <td>10 Delegates</td>
+                            <td>5 Delegates</td>
+                            <td>3 Delegates</td>
+                            <td>2 Delegates</td>
+                            <td>1 Delegate</td>
+                        </tr>
+                        <tr>
+                            <td>Exclusive Deal Room</td>
+                            <td>5 Delegates</td>
+                            <td>3 Delegates</td>
+                            <td>1 Delegate</td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Hotel & Logistics (5 days)</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                        </tr>
+
+                        <tr class="row-category"><td colspan="6">Branding & Visibility</td></tr>
+                        <tr>
+                            <td>Logo on All Materials</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Social Media Mention</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i> (Press Mentions)</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Post-Event Leads Report</td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="check-circle" class="yes-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                            <td><i data-lucide="x-circle" class="no-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────
+         SECTION 5 · CTA BANNER
+    ──────────────────────────────────────────────── -->
+    <section class="pkg-section dark">
+        <div class="pkg-section-inner">
+            <div class="cta-banner">
+                <span class="section-eyebrow" style="color:rgba(255,255,255,0.7);">Limited Slots Available</span>
+                <h2>Ready to Secure Your <span style="color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.4);">Position?</span></h2>
+                <p>Contact our partnerships team today to reserve your package. Slots are strictly limited and allocated on a first-come, first-served basis.</p>
+                <div class="cta-banner-actions">
+                    <a href="contact.html" class="btn-cta-white">Contact Us Now</a>
+                    <a href="tel:+2348034644036" class="btn-cta-outline-white">+234 803 464 4036</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="footer-logo">
+                    <p>Empowering industries through awareness, commercialization, and global partnerships.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Program</h4>
+                    <a href="summit-agenda.html">Agenda</a>
+                    <a href="program-info.html">Program Info</a>
+                    <a href="business-plan.html">Project Overview</a>
+                    <a href="gallery.html">Gallery</a>
+                        <a href="gallery.html">Event Gallery</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Organization</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="our-profile.html">Our Profile</a>
+                    <a href="our-team.html">Our Team</a>
+                    <a href="our-partners.html">Our Partners</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i data-lucide="mail"></i> info@icaihq.com</p>
+                    <p><i data-lucide="phone"></i> +234 (0) 803 464 4036</p>
+                    <p><i data-lucide="map-pin"></i> Abuja, Nigeria</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <a href="https://icaihq.com" style="color:rgba(255,255,255,0.5);text-decoration:none;">www.icaihq.com</a> &nbsp;|&nbsp; Designed by <a href="https://kazpero.com.ng" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5);text-decoration:none;">Kazpero Nig Ltd</a> (<a href="tel:+2348034724902" style="color:rgba(255,255,255,0.5);text-decoration:none;">+2348034724902</a>)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
