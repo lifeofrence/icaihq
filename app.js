@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
-    // 2. Countdown Timer to July 1, 2026
-    const targetDate = new Date('July 1, 2026 00:00:00').getTime();
+    // 2. Countdown Timer to June 29, 2026
+    const targetDate = new Date('June 29, 2026 00:00:00').getTime();
 
     const updateCountdown = () => {
         const now = new Date().getTime();

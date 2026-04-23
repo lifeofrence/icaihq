@@ -139,167 +139,35 @@
     </header>
 
     <main class="container section-padding">
-        <div class="registration-tabs">
-            <button class="tab-btn active" data-tab="sponsor">Become a Sponsor</button>
-            <button class="tab-btn" data-tab="speaker">Become a Speaker</button>
-            <button class="tab-btn" data-tab="vendor">Become a Vendor</button>
-            <button class="tab-btn" data-tab="exhibitor">Exhibit Your Business</button>
-        </div>
-
-        <!-- Sponsor Form -->
-        <div id="sponsor" class="registration-form-container active">
+        <div class="registration-portal-wrapper">
             <div class="form-header">
-                <h2>Sponsorship Registration</h2>
-                <p>Partner with us to gain global industrial visibility.</p>
+                <h2>Registration <span class="highlight-red">Portal</span></h2>
+                <p>Please fill out the form below to register your participation for ICAI 2026.</p>
             </div>
-            <form action="#" class="registration-form">
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label>Company Name *</label>
-                        <input type="text" placeholder="Enter company name" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Company Address *</label>
-                        <input type="text" placeholder="Enter full address" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Person *</label>
-                        <input type="text" placeholder="Full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address *</label>
-                        <input type="email" placeholder="email@company.com" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Phone Number(s) *</label>
-                        <input type="tel" placeholder="+234..." required>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 2rem;">Submit Application</button>
-            </form>
-        </div>
 
-        <!-- Speaker Form -->
-        <div id="speaker" class="registration-form-container">
-            <div class="form-header">
-                <h2>Speaker Application</h2>
-                <p>Share your industrial expertise with a global audience.</p>
+            <!-- Google Form Embed Container -->
+            <div class="google-form-frame" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); position: relative; padding-top: 10px;">
+                <!-- 
+                     INSTRUCTIONS: 
+                     1. Create your Google Form.
+                     2. Click 'Send' -> Select the '< >' Embed Icon.
+                     3. Copy the URL inside the 'src' attribute.
+                     4. Paste it into the 'src' below.
+                -->
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe_X6Oq4-V3w-X0_Y-7v_vj9-f0_Y-7v_vj9-f0_Y-7v_vj9-f0_Y-7v_vj9-f/viewform?embedded=true" 
+                    width="100%" 
+                    height="1200" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading…
+                </iframe>
             </div>
-            <form action="#" class="registration-form">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Full Name *</label>
-                        <input type="text" placeholder="Enter full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Job Title *</label>
-                        <input type="text" placeholder="e.g. CEO, Director" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address *</label>
-                        <input type="email" placeholder="personal/work email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number *</label>
-                        <input type="tel" placeholder="+234..." required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Company / Organization *</label>
-                        <input type="text" placeholder="Enter organization name" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Topic/Theme of Presentation *</label>
-                        <input type="text" placeholder="Main presentation theme" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Abstract / Summary *</label>
-                        <textarea rows="5" placeholder="Brief summary of your presentation..." required></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 2rem;">Submit Application</button>
-            </form>
-        </div>
 
-        <!-- Vendor Form -->
-        <div id="vendor" class="registration-form-container">
-            <div class="form-header">
-                <h2>Vendor Registration</h2>
-                <p>Register as an official vendor for the trade fair.</p>
+            <div class="portal-footer" style="margin-top: 3rem; text-align: center; opacity: 0.7;">
+                <p><i data-lucide="info" style="width: 16px; display: inline-block; vertical-align: middle; margin-right: 5px;"></i> Having trouble? Contact us at <a href="mailto:info@icaihq.com" style="color: var(--industrial-red);">info@icaihq.com</a></p>
             </div>
-            <form action="#" class="registration-form">
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label>Company Name *</label>
-                        <input type="text" placeholder="Enter company name" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Company Address *</label>
-                        <input type="text" placeholder="Enter full address" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Person *</label>
-                        <input type="text" placeholder="Full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address *</label>
-                        <input type="email" placeholder="email@company.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number(s) *</label>
-                        <input type="tel" placeholder="+234..." required>
-                    </div>
-                    <div class="form-group">
-                        <label>Industry Classification *</label>
-                        <input type="text" placeholder="e.g. Geological Services, Mining" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Product/Services Offered *</label>
-                        <textarea rows="3" placeholder="Describe your offerings..." required></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 2rem;">Submit Application</button>
-            </form>
-        </div>
-
-        <!-- Exhibitor Form -->
-        <div id="exhibitor" class="registration-form-container">
-            <div class="form-header">
-                <h2>Exhibit Your Business</h2>
-                <p>Secure a stall and showcase your brand to potential investors.</p>
-            </div>
-            <form action="#" class="registration-form">
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label>Company Name *</label>
-                        <input type="text" placeholder="Enter company name" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Company Address *</label>
-                        <input type="text" placeholder="Enter full address" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Person *</label>
-                        <input type="text" placeholder="Full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address *</label>
-                        <input type="email" placeholder="email@company.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number(s) *</label>
-                        <input type="tel" placeholder="+234..." required>
-                    </div>
-                    <div class="form-group">
-                        <label>Stall Size Required *</label>
-                        <input type="text" placeholder="e.g. 3x3m, 6x6m" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Product/Services to Exhibit *</label>
-                        <textarea rows="3" placeholder="What will you be exhibiting?" required></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 2rem;">Submit Application</button>
-            </form>
         </div>
     </main>
 
@@ -338,23 +206,6 @@
     <script src="app.js"></script>
     <script>
         lucide.createIcons();
-        
-        // Tab switching logic
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const formContainers = document.querySelectorAll('.registration-form-container');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and containers
-                tabBtns.forEach(b => b.classList.remove('active'));
-                formContainers.forEach(c => c.classList.remove('active'));
-
-                // Add active class to clicked button and target container
-                btn.classList.add('active');
-                const targetTab = btn.getAttribute('data-tab');
-                document.getElementById(targetTab).classList.add('active');
-            });
-        });
     </script>
 </body>
 </html>
