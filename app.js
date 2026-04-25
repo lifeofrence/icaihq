@@ -4,6 +4,100 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Header Injection
+    const headerHTML = `
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="brand-logo"></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">About Us <i data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html">About ICAI</a>
+                        <a href="our-profile.html">Organization Profile</a>
+                        <a href="our-team.html">Our Team</a>
+                        <a href="our-partners.html">Strategic Partners</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">Program <i data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="program-info.html">Program Info</a>
+                        <a href="summit-agenda.html">Summit Agenda</a>
+                        <a href="business-plan.html">Project Overview</a>
+                        <a href="gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <a href="packages.html">Packages</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="register.html" class="btn btn-accent">Register Now</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    `;
+
+    const mainNav = document.getElementById('main-nav');
+    if (mainNav) {
+        mainNav.innerHTML = headerHTML;
+        
+        // Highlight active link
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const allLinks = mainNav.querySelectorAll('a');
+        allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // 0.1 Footer Injection
+    const footerHTML = `
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="footer-logo">
+                    <p>Empowering industries through awareness, commercialization, and global partnerships.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Program</h4>
+                    <a href="summit-agenda.html">Agenda</a>
+                    <a href="packages.html">Packages</a>
+                    <a href="program-info.html">Program Info</a>
+                    <a href="business-plan.html">Project Overview</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Organization</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="our-profile.html">Our Profile</a>
+                    <a href="our-team.html">Our Team</a>
+                    <a href="our-partners.html">Strategic Partners</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i data-lucide="mail"></i> info@icaihq.com</p>
+                    <p><i data-lucide="phone"></i> +234 (0) 803 464 4036</p>
+                    <p><i data-lucide="map-pin"></i> Abuja, Nigeria</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <a href="https://icaihq.com" style="color:rgba(255,255,255,0.5);text-decoration:none;">www.icaihq.com</a> &nbsp;|&nbsp; Designed by <a href="https://kazpero.com.ng" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5);text-decoration:none;">Kazpero Nig Ltd</a> (+2348034724902)</p>
+            </div>
+        </div>
+    `;
+
+    const mainFooter = document.querySelector('.main-footer');
+    if (mainFooter) {
+        mainFooter.innerHTML = footerHTML;
+    }
+
     // 1. Initialize Lucide Icons (in case called from script)
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();

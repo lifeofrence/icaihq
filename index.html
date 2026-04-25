@@ -11,45 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/ICAIlogo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav id="main-nav" class="sticky">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="brand-logo">
-            </div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle">About Us <i data-lucide="chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="about.html">About ICAI</a>
-                        <a href="our-profile.html">Organization Profile</a>
-                        <a href="our-team.html">Our Team</a>
-                        <a href="our-partners.html">Strategic Partners</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle">Program <i data-lucide="chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="program-info.html">Program Info</a>
-                        <a href="summit-agenda.html">Summit Agenda</a>
-                        <a href="business-plan.html">Project Overview</a>
-                        <a href="gallery.html">Event Gallery</a>
-                    </div>
-                </div>
-                <a href="packages.html">Packages</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="nav-cta">
-                <a href="register.html" class="btn btn-accent">Register Now</a>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <i data-lucide="menu"></i>
-            </button>
-        </div>
-    </nav>
+    <nav id="main-nav" class="sticky"></nav>
 
     <header id="hero" class="hero-split">
         <div class="hero-content">
@@ -150,6 +117,40 @@
                         <source src="assets/img/ready.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partner-marquee">
+        <div class="container">
+            <h2 class="section-title"> <span class="highlight-red">Our Strategic Partners</span></h2>
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <!-- First set of logos -->
+                    <div class="partner-logo-item"><img src="assets/img/partners/CHC AGRITECH AFRICA.jpeg" alt="CHC Agritech Africa"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/FED MIN OF TRADE AND INVESTMENT.jpeg" alt="Fed Min of Trade and Investment"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/Festac logo.png" alt="Festac Logo"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/GIITEX.jpeg" alt="GIITEX"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/GLOTRADE LOGO_page-0001.jpg.jpeg" alt="Glotrade"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/ICAI OFFICIAL LOGO.png" alt="ICAI Logo"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/Inspire Africa Connect Logo 2.jpg.jpeg" alt="Inspire Africa Connect"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/PESMDAA.jpeg" alt="PESMDAA"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/RURAL HOMES.jpeg" alt="Rural Homes"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/fs.jpeg" alt="FS"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/inter.jpeg" alt="Inter"></div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="partner-logo-item"><img src="assets/img/partners/CHC AGRITECH AFRICA.jpeg" alt="CHC Agritech Africa"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/FED MIN OF TRADE AND INVESTMENT.jpeg" alt="Fed Min of Trade and Investment"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/Festac logo.png" alt="Festac Logo"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/GIITEX.jpeg" alt="GIITEX"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/GLOTRADE LOGO_page-0001.jpg.jpeg" alt="Glotrade"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/ICAI OFFICIAL LOGO.png" alt="ICAI Logo"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/Inspire Africa Connect Logo 2.jpg.jpeg" alt="Inspire Africa Connect"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/PESMDAA.jpeg" alt="PESMDAA"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/RURAL HOMES.jpeg" alt="Rural Homes"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/fs.jpeg" alt="FS"></div>
+                    <div class="partner-logo-item"><img src="assets/img/partners/inter.jpeg" alt="Inter"></div>
                 </div>
             </div>
         </div>
@@ -292,40 +293,7 @@
     </section>
   
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="footer-logo">
-                    <p>Empowering industries through awareness, commercialization, and global partnerships.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Program</h4>
-                    <a href="summit-agenda.html">Agenda</a>
-                <a href="packages.html">Packages</a>
-                    <a href="program-info.html">Program Info</a>
-                    <a href="business-plan.html">Project Overview</a>
-                    <a href="gallery.html">Gallery</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Organization</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="our-profile.html">Our Profile</a>
-                    <a href="our-team.html">Our Team</a>
-                    <a href="our-partners.html">Our Partners</a>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p><i data-lucide="mail"></i> info@icaihq.com</p>
-                    <p><i data-lucide="phone"></i> +234 (0) 803 464 4036</p>
-                    <p><i data-lucide="map-pin"></i> Abuja, Nigeria</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 <a href="https://icaihq.com" style="color:rgba(255,255,255,0.5);text-decoration:none;">www.icaihq.com</a> &nbsp;|&nbsp; Designed by <a href="https://kazpero.com.ng" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5);text-decoration:none;">Kazpero Nig Ltd</a> (<a href="tel:+2348034724902" style="color:rgba(255,255,255,0.5);text-decoration:none;">+2348034724902</a>)</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="main-footer"></footer>
 
     <script src="app.js"></script>
     <script>
