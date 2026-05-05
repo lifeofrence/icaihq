@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Hosts | Industrial & Commercialization Awareness Initiatives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="assets/img/ICAIlogo.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hosts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .hosts-grid.top-tier {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+        .host-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .host-card:hover {
+            transform: translateY(-10px);
+            border-color: #e63946;
+        }
+        .host-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 3px solid #e63946;
+        }
+        .host-info {
+            padding: 1.5rem 1rem 0;
+        }
+        .host-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+        .host-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        .committees-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .committee-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #e63946;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body class="subpage">
+    <nav id="main-nav" class="sticky"></nav>
+
+    <header class="subpage-header">
+        <div class="container">
+            <span class="badge">Leadership</span>
+            <h1>Our <span class="highlight-red">Hosts</span></h1>
+            <p>The visionaries and leaders driving the industrial transformation.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="glass-orb orb-2"></div> 
+        
+        <section class="section-padding">
+            <div class="container">
+                <div class="hosts-grid top-tier">
+                    <div class="host-card">
+                        <img src="assets/img/host/presidentNigeria.jpeg" alt="President of Nigeria" class="host-img">
+                        <div class="host-info">
+                            <h3>His Excellency Bola Ahmed Tinubu (GCFR)</h3>
+                            <p>President, Federal Republic of Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="host-card">
+                        <img src="assets/img/host/FCTMinister.jpeg" alt="Honourable Minister of FCT" class="host-img">
+                        <div class="host-info">
+                            <h3>His Excellency Nyesom Ezenwo Wike - CON, GSSRS</h3>
+                            <p>Honourable Minister of the Federal Capital Territory, Abuja</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hosts-grid">
+                   
+                    <div class="host-card">
+                        <img src="assets/img/host/Honourable minister of State for industry Senator John Owan Enoch.jpeg" alt="Honourable Minister of State for Industry, Trade and Investment" class="host-img">
+                        <div class="host-info">
+                            <h3>Senator John Owan Enoh</h3>
+                            <p>Honourable minister of State for industry, federal Ministry of industry, trade and investment.</p>
+                        </div>
+                    </div>
+
+                     <div class="host-card">
+                        <img src="assets/img/host/Dr Jumoke Oduwole.jpeg" alt="Honourable Minister of Industry, Trade and Investment" class="host-img">
+                        <div class="host-info">
+                            <h3>Dr. Jumoke Oduwole</h3>
+                            <p>Honourable Minister of Industry, Trade and Investment</p>
+                        </div>
+                    </div>
+
+                    <div class="host-card">
+                        <img src="assets/img/host/ministry of industry Isokpunwu Christopher Osaruwanwem.jpeg" alt="Permanent Secretary Federal Ministry of Industry, Trade and Investment" class="host-img">
+                        <div class="host-info">
+                            <h3>Isokpunwu Christopher Osaruwanwem</h3>
+                            <p>Permanent Secretary, Federal Ministry of Industry, Trade and Investment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dark-section section-padding">
+            <div class="container">
+                <h2 class="section-title text-center">Inter-Ministerial <span class="highlight-red">Committees</span></h2>
+                <div class="committees-list">
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Ministry of Foreign Affairs</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Ministry of Communications, Innovation and Digital Economy</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Federal Ministry of Agriculture and Food Security</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Federal Ministry of Information and National Orientation</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Ministry of Solid Minerals Development</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Federal Ministry of Innovation, Science and Technology</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Federal Ministry of Transportation and Digital Infrastructure</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Standard Organisation of Nigeria (SON)</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Ministry of Art, Culture, Tourism and Creative Economy</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Nigeria Police Force</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Nigeria Customs Service</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Nigeria Export Processing Zones Authority (NEPZA)</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> NNPC Limited</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> National Environmental Standards and Regulations Enforcement Agency</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Abuja Chamber of Commerce and Industry (ACCI)</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Federal Capital Territory Administration (FCTA)</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> National Agency for Food and Drug Administration and Control (NAFDAC)</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Raw Materials Research and Development Council (RMRDC)</div>
+                    <div class="committee-item"><i data-lucide="check-circle" style="color: #e63946; width: 20px;"></i> Federal Road Safety Corps (FRSC)</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer"></footer>
+
+    <script src="app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerHTML = `
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"><img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="brand-logo"></a>
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="brand-logo">
+                    <img src="assets/img/host/coatofarm.jpeg" alt="Nigeria Coat of Arms" class="brand-logo">
+                </a>
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -18,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="about.html">About ICAI</a>
                         <a href="our-profile.html">Organization Profile</a>
                         <a href="our-team.html">Our Team</a>
+                        <a href="hosts.html">Our Hosts</a>
                         <a href="our-partners.html">Strategic Partners</a>
                     </div>
                 </div>
@@ -78,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="about.html">About Us</a>
                     <a href="our-profile.html">Our Profile</a>
                     <a href="our-team.html">Our Team</a>
+                    <a href="hosts.html">Our Hosts</a>
                     <a href="our-partners.html">Strategic Partners</a>
                 </div>
                 <div class="footer-contact">
