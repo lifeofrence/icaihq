@@ -1765,6 +1765,41 @@ h1, h2, h3, h4, .btn {
     width: 18px;
 }
 
+.footer-social {
+    margin-top: 1.5rem;
+}
+
+.footer-social h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-family: var(--font-secondary);
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--industrial-red);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
 .footer-bottom {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -2118,4 +2153,36 @@ h1, h2, h3, h4, .btn {
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 1px;
+}
+
+/* Partnership Letter Section */
+.partnership-section {
+    background: #050a15;
+    padding: 4rem 0;
+}
+
+.partnership-section .section-title {
+    color: #fff;
+}
+
+.pdf-viewer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.pdf-embed {
+    width: 100%;
+    height: 800px;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .pdf-embed {
+        height: 500px;
+    }
 }
