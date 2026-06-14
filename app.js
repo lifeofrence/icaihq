@@ -287,10 +287,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // 7. Clean URL: remove .html extension from address bar only
-    if (window.location.pathname.endsWith('.html')) {
-        const cleanPath = window.location.pathname.slice(0, -5);
-        history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
-    }
 });
