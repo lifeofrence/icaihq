@@ -1,6 +1,14 @@
 RewriteEngine On
 
-# Redirect /program-info to /program-info.html (and similar extensionless URLs)
+# Redirect /index.html to /
+RewriteRule ^index\.html$ / [R=301,L,NC]
+
+# Redirect /page.html to /page (clean URLs)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.+)\.html$ /$1 [R=301,L,NC]
+
+# Internally serve /page.html when /page is requested
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]

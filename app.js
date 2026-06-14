@@ -8,37 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerHTML = `
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                <a href="/" style="display: flex; align-items: center; gap: 10px;">
                     <img src="assets/img/ICAIlogo.png" alt="ICAI Logo" class="brand-logo">
                     <img src="assets/img/host/coatofarm.jpeg" alt="Nigeria Coat of Arms" class="brand-logo">
                 </a>
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
                 <div class="dropdown">
                     <a href="#" class="dropdown-toggle">About Us <i data-lucide="chevron-down"></i></a>
                     <div class="dropdown-menu">
-                        <a href="about.html">About ICAI</a>
-                        <a href="our-profile.html">Organization Profile</a>
-                        <a href="our-team.html">Our Team</a>
-                        <a href="hosts.html">Our Hosts</a>
-                        <a href="our-partners.html">Strategic Partners</a>
+                        <a href="about">About ICAI</a>
+                        <a href="our-profile">Organization Profile</a>
+                        <a href="our-team">Our Team</a>
+                        <a href="hosts">Our Hosts</a>
+                        <a href="our-partners">Strategic Partners</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="dropdown-toggle">Program <i data-lucide="chevron-down"></i></a>
                     <div class="dropdown-menu">
-                        <a href="program-info.html">Program Info</a>
-                        <a href="summit-agenda.html">Summit Agenda</a>
-                        <a href="business-plan.html">Project Overview</a>
-                        <a href="gallery.html">Event Gallery</a>
+                        <a href="program-info">Program Info</a>
+                        <a href="summit-agenda">Summit Agenda</a>
+                        <a href="business-plan">Project Overview</a>
+                        <a href="gallery">Event Gallery</a>
                     </div>
                 </div>
-                <a href="packages.html">Packages</a>
-                <a href="contact.html">Contact</a>
+                <a href="packages">Packages</a>
+                <a href="contact">Contact</a>
             </div>
             <div class="nav-cta">
-                <a href="register.html" class="btn btn-accent">Register Now</a>
+                <a href="register" class="btn btn-accent">Register Now</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <i data-lucide="menu"></i>
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainNav.innerHTML = headerHTML;
         
         // Highlight active link
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPath = window.location.pathname.split('/').pop() || '/';
         const allLinks = mainNav.querySelectorAll('a');
         allLinks.forEach(link => {
             const href = link.getAttribute('href');
@@ -71,19 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="footer-links">
                     <h4>Program</h4>
-                    <a href="summit-agenda.html">Agenda</a>
-                    <a href="packages.html">Packages</a>
-                    <a href="program-info.html">Program Info</a>
-                    <a href="business-plan.html">Project Overview</a>
-                    <a href="gallery.html">Gallery</a>
+                    <a href="summit-agenda">Agenda</a>
+                    <a href="packages">Packages</a>
+                    <a href="program-info">Program Info</a>
+                    <a href="business-plan">Project Overview</a>
+                    <a href="gallery">Gallery</a>
                 </div>
                 <div class="footer-links">
                     <h4>Organization</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="our-profile.html">Our Profile</a>
-                    <a href="our-team.html">Our Team</a>
-                    <a href="hosts.html">Our Hosts</a>
-                    <a href="our-partners.html">Strategic Partners</a>
+                    <a href="about">About Us</a>
+                    <a href="our-profile">Our Profile</a>
+                    <a href="our-team">Our Team</a>
+                    <a href="hosts">Our Hosts</a>
+                    <a href="our-partners">Strategic Partners</a>
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
