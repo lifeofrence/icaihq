@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration | ICAI Global Trade Fair 2026</title>
-    <meta name="description" content="Register as a sponsor, speaker, vendor, or exhibitor for the ICAI Global Trade Fair 2026.">
+    <meta name="description" content="Register as a sponsor, speaker, exhibitor, or participant for the ICAI Global Trade Fair 2026.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,13 +31,21 @@
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .tab-btn.active {
             background: var(--red-gradient);
             border-color: transparent;
-            box-shadow: 0 10px 20px rgba(230, 33, 41, 0.2);
+            box-shadow: 0 10px 20px rgba(230, 33, 41, 0.3);
         }
 
         .registration-form-container {
@@ -45,6 +53,7 @@
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
             padding: 4rem;
@@ -68,7 +77,13 @@
 
         .form-header h2 {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .form-header p {
+            opacity: 0.7;
+            font-size: 1rem;
         }
 
         .form-grid {
@@ -81,15 +96,125 @@
             grid-column: span 2;
         }
 
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1.2rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder,
+        .form-group select::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(230, 33, 41, 0.6);
+            box-shadow: 0 0 0 3px rgba(230, 33, 41, 0.1);
+        }
+
+        .form-group select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Alert messages */
+        .form-alert {
+            display: none;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .form-alert.success {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: #86efac;
+        }
+
+        .form-alert.error {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #fca5a5;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .submit-btn .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .submit-btn.loading .spinner { display: inline-block; }
+        .submit-btn.loading .btn-label { opacity: 0.7; }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .portal-footer {
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
         @media (max-width: 768px) {
             .registration-form-container {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
             }
             .form-grid {
                 grid-template-columns: 1fr;
             }
             .form-grid .form-group.full-width {
                 grid-column: span 1;
+            }
+            .tab-btn {
+                padding: 0.75rem 1.25rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -106,35 +231,232 @@
     </header>
 
     <main class="container section-padding">
-        <div class="registration-portal-wrapper">
+        <!-- Tab Buttons -->
+        <div class="registration-tabs">
+            <button class="tab-btn active" data-tab="sponsor" id="tab-sponsor">Become a Sponsor</button>
+            <button class="tab-btn" data-tab="speaker" id="tab-speaker">Become a Speaker</button>
+            <button class="tab-btn" data-tab="exhibitor" id="tab-exhibitor">Exhibit Your Business</button>
+            <button class="tab-btn" data-tab="participant" id="tab-participant">Participant</button>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SPONSOR FORM -->
+        <!-- ============================================================ -->
+        <div id="sponsor" class="registration-form-container active">
             <div class="form-header">
-                <h2>Registration <span class="highlight-red">Portal</span></h2>
-                <p>Please fill out the form below to register your participation for ICAI 2026.</p>
+                <h2>Sponsorship <span class="highlight-red">Registration</span></h2>
+                <p>Partner with us to gain global industrial visibility. Your details will be sent to <strong>sponsorship@icaihq.com</strong>.</p>
             </div>
+            <div class="form-alert" id="sponsor-alert"></div>
+            <form class="registration-form" id="form-sponsor" action="send_registration.php" method="POST" novalidate>
+                <input type="hidden" name="registration_type" value="sponsor">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="sponsor-company">Company Name *</label>
+                        <input type="text" id="sponsor-company" name="company_name" placeholder="Enter company name" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="sponsor-address">Company Address *</label>
+                        <input type="text" id="sponsor-address" name="company_address" placeholder="Enter full address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-contact">Contact Person *</label>
+                        <input type="text" id="sponsor-contact" name="contact_person" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-email">Email Address *</label>
+                        <input type="email" id="sponsor-email" name="email" placeholder="email@company.com" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="sponsor-phone">Phone Number(s) *</label>
+                        <input type="tel" id="sponsor-phone" name="phone" placeholder="+234..." required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="sponsor-package">Sponsorship Package Interest</label>
+                        <select id="sponsor-package" name="sponsorship_package">
+                            <option value="">-- Select a package --</option>
+                            <option value="Platinum">Platinum Sponsor</option>
+                            <option value="Gold">Gold Sponsor</option>
+                            <option value="Silver">Silver Sponsor</option>
+                            <option value="Bronze">Bronze Sponsor</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="sponsor-message">Additional Message</label>
+                        <textarea id="sponsor-message" name="message" rows="4" placeholder="Any additional information or questions..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-accent submit-btn" id="btn-sponsor">
+                    <span class="spinner"></span>
+                    <span class="btn-label">Submit Sponsorship Application</span>
+                </button>
+            </form>
+        </div>
 
-            <!-- Google Form Embed Container -->
-            <div class="google-form-frame" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); position: relative; padding-top: 10px;">
-                <!-- 
-                     INSTRUCTIONS: 
-                     1. Create your Google Form.
-                     2. Click 'Send' -> Select the '< >' Embed Icon.
-                     3. Copy the URL inside the 'src' attribute.
-                     4. Paste it into the 'src' below.
-                -->
-                <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfKRS62-_qSiJX9jn2jgHlN1ir6_7O88Nxxj5UhEeDCq5_ecQ/viewform?embedded=true" 
-                    width="100%" 
-                    height="1200" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0">
-                    Loading…
-                </iframe>
+        <!-- ============================================================ -->
+        <!-- SPEAKER FORM -->
+        <!-- ============================================================ -->
+        <div id="speaker" class="registration-form-container">
+            <div class="form-header">
+                <h2>Speaker <span class="highlight-red">Application</span></h2>
+                <p>Share your industrial expertise with a global audience. Your details will be sent to <strong>delegations@icaihq.com</strong>.</p>
             </div>
+            <div class="form-alert" id="speaker-alert"></div>
+            <form class="registration-form" id="form-speaker" action="send_registration.php" method="POST" novalidate>
+                <input type="hidden" name="registration_type" value="speaker">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="speaker-name">Full Name *</label>
+                        <input type="text" id="speaker-name" name="full_name" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="speaker-title">Job Title *</label>
+                        <input type="text" id="speaker-title" name="job_title" placeholder="e.g. CEO, Director" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="speaker-email">Email Address *</label>
+                        <input type="email" id="speaker-email" name="email" placeholder="personal/work email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="speaker-phone">Phone Number *</label>
+                        <input type="tel" id="speaker-phone" name="phone" placeholder="+234..." required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="speaker-org">Company / Organization *</label>
+                        <input type="text" id="speaker-org" name="organization" placeholder="Enter organization name" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="speaker-topic">Topic / Theme of Presentation *</label>
+                        <input type="text" id="speaker-topic" name="presentation_topic" placeholder="Main presentation theme" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="speaker-abstract">Abstract / Summary *</label>
+                        <textarea id="speaker-abstract" name="abstract" rows="5" placeholder="Brief summary of your presentation..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-accent submit-btn" id="btn-speaker">
+                    <span class="spinner"></span>
+                    <span class="btn-label">Submit Speaker Application</span>
+                </button>
+            </form>
+        </div>
 
-            <div class="portal-footer" style="margin-top: 3rem; text-align: center; opacity: 0.7;">
-                <p><i data-lucide="info" style="width: 16px; display: inline-block; vertical-align: middle; margin-right: 5px;"></i> Having trouble? Contact us at <a href="mailto:info@icaihq.com" style="color: var(--industrial-red);">info@icaihq.com</a></p>
+        <!-- ============================================================ -->
+        <!-- EXHIBITOR FORM -->
+        <!-- ============================================================ -->
+        <div id="exhibitor" class="registration-form-container">
+            <div class="form-header">
+                <h2>Exhibit Your <span class="highlight-red">Business</span></h2>
+                <p>Secure a stall and showcase your brand to potential investors. Your details will be sent to <strong>exhibition@icaihq.com</strong>.</p>
             </div>
+            <div class="form-alert" id="exhibitor-alert"></div>
+            <form class="registration-form" id="form-exhibitor" action="send_registration.php" method="POST" novalidate>
+                <input type="hidden" name="registration_type" value="exhibitor">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="exhibitor-company">Company Name *</label>
+                        <input type="text" id="exhibitor-company" name="company_name" placeholder="Enter company name" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="exhibitor-address">Company Address *</label>
+                        <input type="text" id="exhibitor-address" name="company_address" placeholder="Enter full address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exhibitor-contact">Contact Person *</label>
+                        <input type="text" id="exhibitor-contact" name="contact_person" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exhibitor-email">Email Address *</label>
+                        <input type="email" id="exhibitor-email" name="email" placeholder="email@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exhibitor-phone">Phone Number(s) *</label>
+                        <input type="tel" id="exhibitor-phone" name="phone" placeholder="+234..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exhibitor-stall">Stall Size Required *</label>
+                        <select id="exhibitor-stall" name="stall_size" required>
+                            <option value="">-- Select stall size --</option>
+                            <option value="3x3m">3×3m</option>
+                            <option value="6x3m">6×3m</option>
+                            <option value="6x6m">6×6m</option>
+                            <option value="Custom">Custom (specify below)</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="exhibitor-products">Product / Services to Exhibit *</label>
+                        <textarea id="exhibitor-products" name="products_services" rows="3" placeholder="What will you be exhibiting?" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="exhibitor-message">Additional Requirements</label>
+                        <textarea id="exhibitor-message" name="message" rows="3" placeholder="Power requirements, special setup needs, etc."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-accent submit-btn" id="btn-exhibitor">
+                    <span class="spinner"></span>
+                    <span class="btn-label">Submit Exhibition Application</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- PARTICIPANT FORM -->
+        <!-- ============================================================ -->
+        <div id="participant" class="registration-form-container">
+            <div class="form-header">
+                <h2>Participant <span class="highlight-red">Registration</span></h2>
+                <p>Secure your place at ICAI Global Trade Fair 2026. Your details will be sent to <strong>registration@icaihq.com</strong>.</p>
+            </div>
+            <div class="form-alert" id="participant-alert"></div>
+            <form class="registration-form" id="form-participant" action="send_registration.php" method="POST" novalidate>
+                <input type="hidden" name="registration_type" value="participant">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="participant-name">Full Name *</label>
+                        <input type="text" id="participant-name" name="full_name" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="participant-email">Email Address *</label>
+                        <input type="email" id="participant-email" name="email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="participant-phone">Phone Number *</label>
+                        <input type="tel" id="participant-phone" name="phone" placeholder="+234..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="participant-country">Country *</label>
+                        <input type="text" id="participant-country" name="country" placeholder="e.g. Nigeria, Ghana..." required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="participant-org">Company / Organization</label>
+                        <input type="text" id="participant-org" name="organization" placeholder="Enter organization name (optional)">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="participant-interest">Area of Interest *</label>
+                        <select id="participant-interest" name="area_of_interest" required>
+                            <option value="">-- Select your primary interest --</option>
+                            <option value="Trade & Commerce">Trade &amp; Commerce</option>
+                            <option value="Industrial Innovation">Industrial Innovation</option>
+                            <option value="Investment Opportunities">Investment Opportunities</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Policy & Governance">Policy &amp; Governance</option>
+                            <option value="General Attendance">General Attendance</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="participant-message">Any Special Requirements</label>
+                        <textarea id="participant-message" name="message" rows="3" placeholder="Dietary needs, accessibility requirements, etc."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-accent submit-btn" id="btn-participant">
+                    <span class="spinner"></span>
+                    <span class="btn-label">Complete Registration</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="portal-footer">
+            <p><i data-lucide="info" style="width: 16px; display: inline-block; vertical-align: middle; margin-right: 5px;"></i> Having trouble? Contact us at <a href="mailto:info@icaihq.com" style="color: var(--industrial-red);">info@icaihq.com</a></p>
         </div>
     </main>
 
@@ -143,6 +465,84 @@
     <script src="app.js"></script>
     <script>
         lucide.createIcons();
+
+        // ── Tab switching ─────────────────────────────────────────────
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const formContainers = document.querySelectorAll('.registration-form-container');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                formContainers.forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+
+        // ── AJAX form submission ──────────────────────────────────────
+        document.querySelectorAll('.registration-form').forEach(form => {
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const type = this.querySelector('[name="registration_type"]').value;
+                const alertBox = document.getElementById(type + '-alert');
+                const btn = this.querySelector('.submit-btn');
+
+                // Reset alert
+                alertBox.style.display = 'none';
+                alertBox.className = 'form-alert';
+
+                // Validate required fields
+                const requiredFields = this.querySelectorAll('[required]');
+                let valid = true;
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = 'rgba(239,68,68,0.7)';
+                        valid = false;
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+
+                if (!valid) {
+                    alertBox.textContent = 'Please fill in all required fields.';
+                    alertBox.classList.add('error');
+                    alertBox.style.display = 'block';
+                    alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                // Loading state
+                btn.classList.add('loading');
+                btn.disabled = true;
+
+                try {
+                    const formData = new FormData(this);
+                    const response = await fetch('send_registration.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alertBox.textContent = result.message || 'Your application has been submitted successfully! We will be in touch shortly.';
+                        alertBox.classList.add('success');
+                        this.reset();
+                    } else {
+                        alertBox.textContent = result.message || 'Something went wrong. Please try again or contact us directly.';
+                        alertBox.classList.add('error');
+                    }
+                } catch (err) {
+                    alertBox.textContent = 'Network error. Please check your connection and try again.';
+                    alertBox.classList.add('error');
+                }
+
+                alertBox.style.display = 'block';
+                alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                btn.classList.remove('loading');
+                btn.disabled = false;
+            });
+        });
     </script>
 </body>
 </html>
